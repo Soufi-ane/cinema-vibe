@@ -6,6 +6,7 @@ function MovieItem({ movie, className }) {
     function ShowMovieDetails() {
         navigate(`/cinema-vibe/${movie.imdbID}`);
     }
+
     return (
         <div
             onClick={ShowMovieDetails}

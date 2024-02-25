@@ -16,19 +16,21 @@ function MoviesShow({ movies, loading, top }) {
     //     toast.loading("loading...");
     // } else toast.remove();
     if (loading)
-        return <Loader className={top ? "hidden md:block h-[78vh]" : "h-[85vh] hidden md:block"} />;
+        return (
+            <Loader className={top ? "hidden md:flex h-[78vh] " : "h-[85vh] md:pt-0 pt-[50vh]"} />
+        );
     if (!movies && !query) return <Br />;
-    if (!movies) return <Empty source={currentType} />;
+    if (!movies) return <Empty height="90vh" source={currentType} />;
     let regular = `relative px-3 overflow-y-scroll mt-4 ${
-        top ? "ml-5 h-[78vh]" : "flex-auto h-[85vh]"
+        top ? "ml-5 h-[74vh]" : "flex-auto h-[85vh]"
     }`;
 
     return (
         <div
-            className={`${top ? "flex flex-col items-center mb-16" : "flex-auto mt-16"} ${
+            className={`${top ? "flex flex-col items-center pb-16" : "flex-auto pt-16 "} ${
                 top && query ? "hidden md:flex" : ""
             }`}>
-            {top && <p className="pt-5 font-medium text-lg">Our recommendations</p>}
+            {top && <p className="lg:mt-20 font-medium text-lg">Our recommendations</p>}
             <div className={regular}>
                 {movies.map((mov, index) => (
                     <MovieItem className={top ? "h-24 w-16" : ""} movie={mov} key={index} />
