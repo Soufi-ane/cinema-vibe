@@ -1,5 +1,5 @@
 const apiKey = "e8dc9165";
-const apiUrl = "http://www.omdbapi.com/";
+const apiUrl = "https://www.omdbapi.com/";
 
 export async function getMovies({ query, type, year }) {
     let url = `${apiUrl}?apikey=${apiKey}`;
