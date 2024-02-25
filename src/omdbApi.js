@@ -10,8 +10,8 @@ export async function getMovies({ query, type, year }) {
 
     const res = await fetch(url);
     const data = await res.json();
-    if (!data) return null;
-    return data.Search || {};
+    if (!data) return {};
+    return data.Search || null;
 }
 
 export async function getMovieDetails(id) {
