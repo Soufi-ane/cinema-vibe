@@ -17,7 +17,7 @@ function MoviesShow({ movies, loading, top }) {
     // } else toast.remove();
     if (loading)
         return (
-            <Loader className={top ? "hidden md:flex h-[78vh] " : "h-[85vh] md:pt-0 pt-[50vh]"} />
+            <Loader className={top ? "hidden  md:flex h-[78vh] " : "h-[85vh] md:pt-0 pt-[50vh] "} />
         );
     if (!movies && !query) return <Br />;
     if (!movies) return <Empty height="90vh" source={currentType} />;

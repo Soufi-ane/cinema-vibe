@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getMovieDetails } from "../omdbApi";
 import Show from "../pages/Show";
-import Loader from "./Loader";
+
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -11,10 +11,11 @@ function Br() {
         queryKey: ["breakingBad"],
         queryFn: () => getMovieDetails("tt0903747"),
     });
-    if (isLoading) return <Loader />;
+
     function HandleDetails() {
         navigate("/cinema-vibe/tt0903747");
     }
+    if (isLoading) return null;
     return (
         <div className="flex flex-col mx-auto md:flex-row items-start w-[90vw] md:w-[60rem] bg-stone-100 rounded-md py-10 md:pt-20 px-10 my-16 mt-20 h-full pb-20 md:mt-28 pt-8 md:my-10 gap-5">
             <div>
