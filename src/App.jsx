@@ -5,7 +5,7 @@ import PageNotFound from "./pages/PageNotFound";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/cinema-vibe/",
         element: <AppLayout />,
         errorElement: <PageNotFound />,
     },
