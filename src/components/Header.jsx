@@ -26,7 +26,7 @@ function Header({ headerType }) {
 
     function HandleSearch(e) {
         e.preventDefault();
-        navigate("/");
+        navigate("/cinema-vibe/");
 
         if (!search.length) return;
         searchParams.set("s", search);

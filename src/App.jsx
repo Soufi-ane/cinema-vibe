@@ -10,7 +10,7 @@ const router = createBrowserRouter([
         errorElement: <PageNotFound />,
     },
     {
-        path: "/ID/:ID",
+        path: "/cinema-vibe/:id",
         element: <Show />,
     },
 ]);

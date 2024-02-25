@@ -13,7 +13,7 @@ function Br() {
     });
     if (isLoading) return <Loader />;
     function HandleDetails() {
-        navigate("/ID/tt0903747");
+        navigate("/cinema-vibe/tt0903747");
     }
     return (
         <div className="flex flex-col mx-auto md:flex-row items-start w-[90vw] md:w-[60rem] bg-stone-100 rounded-md py-10 md:pt-20 px-10 my-16 mt-20 pt-8 md:my-10 gap-5">

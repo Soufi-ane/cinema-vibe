@@ -14,7 +14,8 @@ import { IoLocationSharp } from "react-icons/io5";
 import Empty from "../components/Empty";
 
 function Show() {
-    const id = useParams("ID").ID;
+    const { id } = useParams("id");
+
     const { data, error, isLoading } = useQuery({
         queryKey: [`${id}`],
         queryFn: () => getMovieDetails(id),
