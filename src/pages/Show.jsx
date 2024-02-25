@@ -45,13 +45,13 @@ function Show() {
 
                                 {data.imdbRating}
                                 <TiStarFullOutline className="text-yellow-500" />
-                                <p className="hidden sm:inline text-sm">{`(${data.imdbVotes} votes)`}</p>
+                                <span className="hidden sm:inline text-sm">{`(${data.imdbVotes} votes)`}</span>
                             </p>
                             <p>{data.Genre}</p>
-                            <p className=" text-xs">
+                            <span className=" text-xs">
                                 <span className="hidden sm:inline">Premiered on </span>
                                 <span>{data.Released}</span>
-                            </p>{" "}
+                            </span>{" "}
                             <p className="flex flex-col gap-1 text-sm">
                                 <span>{`${
                                     data.Type === "series" ? data.totalSeasons + " Seasons" : ""
@@ -88,25 +88,25 @@ function Show() {
                             )}
                             {data.Writer !== "N/A" && (
                                 <p>
-                                    <div className="flex items-center gap-1">
+                                    <span className="flex items-center gap-1">
                                         <span>Writers</span>
                                         <RiPencilLine className="text-xl text-green-700" />
-                                    </div>
+                                    </span>
                                     <span>{data.Writer}</span>
                                 </p>
                             )}
                             <p>
-                                <div className="flex items-center gap-1">
+                                <span className="flex items-center gap-1">
                                     <span>Actors</span>
                                     <FaTheaterMasks className="text-lg text-orange-800" />
-                                </div>
+                                </span>
                                 <span>{data.Actors}</span>
                             </p>
                             <p>
-                                <div className="flex items-center gap-1">
+                                <span className="flex items-center gap-1">
                                     <span>Awards</span>
                                     <IoMdTrophy className="text-lg text-amber-500" />
-                                </div>
+                                </span>
                                 <span>{`${
                                     !data.Awards || data.Awards == "N/A"
                                         ? "No awards yet"
