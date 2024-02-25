@@ -11,7 +11,7 @@ export async function getMovies({ query, type, year }) {
     const res = await fetch(url);
     const data = await res.json();
     if (!data) return null;
-    return data.Search;
+    return data.Search || {};
 }
 
 export async function getMovieDetails(id) {
