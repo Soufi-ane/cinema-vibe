@@ -42,19 +42,19 @@ function Header({ headerType }) {
             className={`flex w-screen fixed justify-between items-center py-3  h-16 ${
                 headerType === "white" ? "bg-white" : "bg-stone-100"
             }`}>
-            <div className="hidden md:flex gap-2 items-center">
+            <div className="hidden lg:flex gap-2 items-center">
                 <RiMovie2Line className="text-purple-600 text-4xl ml-2" />
-                <span className="font-medium">Cinema Vibe</span>
+                <span className="w-28 font-medium">Cinema Vibe</span>
             </div>
             <div className="flex gap-2 md:pr-2 lg:pr-20  items-center ">
                 <form
                     onSubmit={HandleSearch}
-                    className="flex items-center gap-2 sm:w-full w-screen md:gap-5 justify-around">
+                    className="flex items-center px-[10vw] gap-2 sm:w-full w-screen md:gap-5 justify-around">
                     <input
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
                         maxLength={20}
-                        className="py-1 rounded-full md:mr-5 px-3 md:w-72 w-44 md:focus:w-80 focus:outline-8 outline-stone-300 text-sm md:focus:py-1.5 transition-all border-2 border-stone-300 sm:-order-1 order-2"
+                        className="py-1 rounded-full md:mr-5 px-3 md:w-72 w-[50vw] sm:w-[35vw] md:focus:w-80 focus:outline-8 outline-stone-300 text-sm md:focus:py-1.5 transition-all border-2 border-stone-300 sm:-order-1 order-2"
                         type="text"
                         placeholder="Search"
                     />
@@ -73,7 +73,7 @@ function Header({ headerType }) {
                     <select
                         className={`${
                             headerType === "white" ? "bg-stone-100" : "bg-white"
-                        } rounded-full py-1 px-3 text-sm focus:outline-8 outline-stone-300`}
+                        } rounded-full py-1 px-3 text-sm focus:outline-8 outline-stone-300 sm:order-first lg:order-1`}
                         name="type"
                         value={type}
                         onChange={(e) => setType(e.target.value)}>
@@ -81,7 +81,7 @@ function Header({ headerType }) {
                         <option value="series">Series</option>
                     </select>
                     <input
-                        className="py-1 hidden sm:inline  rounded-full mr-10 px-4 w-28 focus:outline-8 outline-stone-300 text-sm  transition-all border-2 border-stone-300"
+                        className="py-1 hidden sm:inline  rounded-full mr-10 px-4 w-28 focus:outline-8 outline-stone-300 text-sm  transition-all border-2 border-stone-300 lg:order-last"
                         type="number"
                         placeholder="year"
                         value={year}
