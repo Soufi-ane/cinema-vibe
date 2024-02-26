@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 function MovieItem({ movie, className }) {
     const navigate = useNavigate();
     function ShowMovieDetails() {
-        navigate(`/cinema-vibe/${movie.imdbID}`);
+        navigate(`${movie.imdbID}`);
     }
 
     return (

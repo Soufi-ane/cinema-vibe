@@ -14,7 +14,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import Empty from "../components/Empty";
 
 function Show() {
-    const { id } = useParams("id");
+    const { id } = useParams();
 
     const { data, error, isLoading } = useQuery({
         queryKey: [`${id}`],

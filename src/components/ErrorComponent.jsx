@@ -1,4 +1,5 @@
-function ErrorComponent() {
+function ErrorComponent(error) {
+    console.log(error);
     return (
         <div className="w-[100vw] h-[95vh] flex items-center justify-center">
             somethin went wrong !
