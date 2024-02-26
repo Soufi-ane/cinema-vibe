@@ -62,7 +62,7 @@ function Show() {
                                             data.Type == "movie" ? "Runtime :" : "Avg Runtime :"
                                         }`}</span>
 
-                                        <span>${data.Runtime}</span>
+                                        <span>{data.Runtime}</span>
                                     </span>
                                     <RxLapTimer />
                                 </span>
