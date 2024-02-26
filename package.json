@@ -1,7 +1,7 @@
 {
     "homepage": "https//Soufi-ane/github.io/cinema-vibe",
     "name": "cinema-vibe",
-    "private": true,
+    "private": false,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
