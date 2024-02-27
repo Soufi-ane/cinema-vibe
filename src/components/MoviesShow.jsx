@@ -16,7 +16,10 @@ function MoviesShow({ movies, loading, top }) {
 
     if (loading)
         return (
-            <Loader className={top ? "hidden  md:flex h-[78vh] " : "h-[85vh] md:pt-0 pt-[50vh] "} />
+            <Loader
+                isLoading={loading}
+                className={top ? "hidden  md:flex h-[78vh] " : "h-[85vh] md:pt-0 pt-[50vh] "}
+            />
         );
     if (!movies && !query)
         return (
