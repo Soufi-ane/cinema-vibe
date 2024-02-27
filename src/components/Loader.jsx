@@ -7,7 +7,7 @@ function Loader({ className }) {
 
     return (
         <div
-            className={`w-full ${
+            className={`w-full pt-0 md:pt-[40%] lg:pt-[10%] ${
                 isDark ? secondColor : "bg-white"
             } flex-1 h-screen flex  items-center justify-center ${className}`}>
             <div

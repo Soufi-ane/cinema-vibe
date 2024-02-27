@@ -38,13 +38,13 @@ function MoviesShow({ movies, loading, top }) {
         );
     if (!movies) return <Empty height="90vh" source={currentType} />;
     let regular = `relative px-3 overflow-y-scroll mt-4 ${
-        top ? "ml-5 h-[74vh]" : "flex-auto h-[85vh]"
+        top ? "ml-5 h-[80vh]" : "flex-auto h-[85vh]"
     }`;
 
     return (
         <div
             className={`${top ? "flex flex-col items-center pb-16" : "flex-auto pt-16 "} ${
-                top && query ? "hidden md:flex" : ""
+                top && query ? "mt-60 lg:mt-0 hidden md:flex" : ""
             }`}>
             {top && (
                 <p className={`lg:mt-20 ${textColor} font-medium text-lg`}>Our recommendations</p>

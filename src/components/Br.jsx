@@ -21,7 +21,7 @@ function Br() {
     if (isLoading) return null;
     return (
         <div
-            className={`flex flex-col mx-auto lg:flex-row items-center lg:w-[60vw] w-[90vw]  ${mainColor} ${textColor} rounded-md px-5 lg:px-10  h-full py-16 gap-5`}>
+            className={`flex flex-col mx-auto lg:flex-row items-center lg:w-[60vw] w-[90vw]  ${mainColor} ${textColor} rounded-md px-5 lg:px-10  h-full lg:h-[60vh] py-16 gap-5`}>
             <div>
                 <img
                     onClick={HandleDetails}
