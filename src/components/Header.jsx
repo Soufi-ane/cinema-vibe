@@ -1,6 +1,6 @@
 import { RiMovie2Line } from "react-icons/ri";
 import { getMovies } from "../omdbApi";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { IoSearch } from "react-icons/io5";
@@ -19,6 +19,13 @@ function Header() {
     const [year, setYear] = useState(currentYear);
     const { id } = useParams();
     const headerType = id ? "show" : "home";
+    useEffect(() => {
+        window.addEventListener("keydown", (e) => {
+            if (event.key === "Enter" || event.keyCode === 13 || event.keyCode === 3) {
+                searchRef.current.blur();
+            }
+        });
+    }, []);
 
     const { mainColor, secondColor, textColor, isDark, setIsDark } = useContext(darkModeContext);
     const {
@@ -30,7 +37,7 @@ function Header() {
         queryFn: getMovies,
     });
     const navigate = useNavigate();
-
+    const searchRef = useRef();
     function HandleSearch(e) {
         e.preventDefault();
         navigate("/cinema-vibe/");
@@ -65,6 +72,7 @@ function Header() {
                     className="flex items-center px-[10vw] gap-2 sm:w-full w-screen md:gap-3 justify-around">
                     <input
                         value={search}
+                        ref={searchRef}
                         onChange={(e) => setSearch(e.target.value)}
                         maxLength={20}
                         className={`py-1 rounded-full md:mr-5 px-3 md:w-64 w-[50vw] sm:w-[35vw] md:focus:w-80 focus:outline-8 outline-stone-300 text-sm md:focus:py-1.5 transition-all border-2 border-stone-300 sm:-order-1 order-2 ${secondColor} ${textColor}`}
