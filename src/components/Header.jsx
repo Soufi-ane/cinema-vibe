@@ -23,9 +23,9 @@ function Header() {
     const searchButtonRef = useRef();
     useEffect(() => {
         window.addEventListener("keydown", (e) => {
-            if (event.key === "Enter" || event.keyCode === 13 || event.keyCode === 3) {
+            if (e.key === "Enter" || e.keyCode === 13 || e.keyCode === 3) {
                 searchRef.current.blur();
-                searchRef.current.submit();
+
                 searchButtonRef.current.click();
             }
         });
