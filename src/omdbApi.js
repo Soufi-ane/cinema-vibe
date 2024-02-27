@@ -1,5 +1,27 @@
 const apiKey = "e8dc9165";
 const apiUrl = "//omdbapi.com/";
+const IDs = [
+    "tt3032476",
+    "tt0411008",
+    "tt1520211",
+    "tt0816692",
+    "tt0455275",
+    "tt1124373",
+    "tt0111161",
+    "tt0306414",
+    "tt0944947",
+    "tt7286456",
+    "tt0050083",
+    "tt0110912",
+    "tt2442560",
+    "tt0109830",
+
+    "tt0099685",
+    "tt0114369",
+    "tt2306299",
+    "tt0102926",
+    "tt15398776",
+];
 
 export async function getMovies({ query, type, year }) {
     let url = `${apiUrl}?apikey=${apiKey}`;
@@ -20,14 +42,15 @@ export async function getMovieDetails(id) {
 
     return data;
 }
-export async function getTopMovies(IDs) {
-    if (!IDs) return;
-    let data = [];
-    for (let i = 0; i < IDs.length; i++) {
-        const r = await fetch(`${apiUrl}?apiKey=${apiKey}&i=${IDs.at(i)}`);
-        const detail = await r.json();
-        data = [...data, detail];
-    }
 
+const requests = IDs.map((ID) =>
+    fetch(`${apiUrl}?apiKey=${apiKey}&i=${ID}`).then((res) => res.json())
+);
+
+export async function getTopMovies() {
+    if (!IDs) return;
+
+    const data = await Promise.all(requests);
+    if (!data) return [];
     return data;
 }
