@@ -19,11 +19,14 @@ function Header() {
     const [year, setYear] = useState(currentYear);
     const { id } = useParams();
     const headerType = id ? "show" : "home";
+    const searchRef = useRef();
+    const searchButtonRef = useRef();
     useEffect(() => {
         window.addEventListener("keydown", (e) => {
             if (event.key === "Enter" || event.keyCode === 13 || event.keyCode === 3) {
                 searchRef.current.blur();
                 searchRef.current.submit();
+                searchButtonRef.current.click();
             }
         });
     }, []);
@@ -38,7 +41,7 @@ function Header() {
         queryFn: getMovies,
     });
     const navigate = useNavigate();
-    const searchRef = useRef();
+
     function HandleSearch(e) {
         e.preventDefault();
         navigate("/cinema-vibe/");
@@ -81,6 +84,7 @@ function Header() {
                         placeholder="Search"
                     />
                     <button
+                        ref={searchButtonRef}
                         className={`py-1 hidden sm:inline ${textColor} ${secondColor} px-6 rounded-full `}>
                         Search
                     </button>
