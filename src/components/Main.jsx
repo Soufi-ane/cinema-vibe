@@ -34,7 +34,9 @@ function Main() {
 
     return (
         <div
-            className={`xl:pl-20 lg:pl-9  md:h-full lg:h-screen mr-0  flex flex-col lg:flex-row 2xl:px-[5vw] 2xl:pl-[10vw] justify-between ${secondColor}`}>
+            className={`xl:pl-20 lg:pl-9  ${
+                query ? "h-screen" : "h-full"
+            }  md:h-full lg:h-screen mr-0  flex flex-col lg:flex-row 2xl:px-[5vw] 2xl:pl-[10vw] justify-between ${secondColor}`}>
             <MoviesShow top={false} movies={withPosterMovies} loading={isLoading} />
             <MoviesShow top={true} movies={topMovies} loading={isLoadingTopMovies} />
         </div>

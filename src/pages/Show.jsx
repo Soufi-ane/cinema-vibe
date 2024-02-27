@@ -50,7 +50,7 @@ function Show() {
         <>
             <div className={`${textColor} ${secondColor} grid h-screen`}>
                 <div
-                    className="absolute opacity-70 inset-0 bg-cover bg-center"
+                    className="absolute h-full bg-fixed opacity-70 inset-0 bg-cover bg-center"
                     style={{
                         backgroundImage: `url(${backgroundUrl})`,
                     }}></div>
