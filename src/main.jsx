@@ -10,6 +10,7 @@ import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom"
 import AppLayout from "./pages/AppLayout.jsx";
 import PageNotFound from "./pages/PageNotFound.jsx";
 import Show from "./pages/Show.jsx";
+import Main from "./components/Main.jsx";
 const queryClient = new QueryClient({
     defaultOptions: {
         queries: {
@@ -21,13 +22,24 @@ const queryClient = new QueryClient({
 const router = createBrowserRouter([
     {
         path: "/cinema-vibe/",
-        element: <AppLayout />,
-
+        element: <App />,
         errorElement: <PageNotFound />,
-    },
-    {
-        path: "/cinema-vibe/:id",
-        element: <Show />,
+        children: [
+            {
+                path: "/cinema-vibe/",
+                element: <AppLayout />,
+                children: [
+                    {
+                        path: "/cinema-vibe/",
+                        element: <Main />,
+                    },
+                    {
+                        path: ":id",
+                        element: <Show />,
+                    },
+                ],
+            },
+        ],
     },
 ]);
 
