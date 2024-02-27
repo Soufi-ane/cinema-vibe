@@ -23,6 +23,7 @@ function Header() {
         window.addEventListener("keydown", (e) => {
             if (event.key === "Enter" || event.keyCode === 13 || event.keyCode === 3) {
                 searchRef.current.blur();
+                searchRef.current.submit();
             }
         });
     }, []);
