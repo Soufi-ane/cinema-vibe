@@ -53,7 +53,6 @@ function Show() {
                     className="absolute opacity-70 inset-0 bg-cover bg-center"
                     style={{
                         backgroundImage: `url(${backgroundUrl})`,
-                        // filter: "blur(5px)",
                     }}></div>
                 <div
                     className="flex flex-col lg:flex-row row-span-1   items-center py-20 lg:py-0 md:py-30 px-0 md:px-10 md:gap-10 gap-3 overflow-x-hidden md:mt-0 w-[100vw] flex-1 z-10 bg-cover bg-transparent bg-center"
