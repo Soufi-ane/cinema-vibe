@@ -4,9 +4,12 @@ import Show from "../pages/Show";
 
 import { FaStar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { darkModeContext } from "../Context/darkModeContext";
 
 function Br() {
     const navigate = useNavigate();
+    const { mainColor, secondColor, textColor } = useContext(darkModeContext);
     const { data, error, isLoading } = useQuery({
         queryKey: ["breakingBad"],
         queryFn: () => getMovieDetails("tt0903747"),
@@ -17,7 +20,8 @@ function Br() {
     }
     if (isLoading) return null;
     return (
-        <div className="flex flex-col mx-auto md:flex-row items-start w-[90vw] md:w-[60rem] bg-stone-100 rounded-md py-10 md:pt-20 px-10 my-16 mt-20 h-full pb-20 md:mt-28 pt-8 md:my-10 gap-5">
+        <div
+            className={`flex flex-col mx-auto lg:flex-row items-center lg:w-[60vw] w-[90vw]  ${mainColor} ${textColor} rounded-md px-5 lg:px-10  h-full py-16 gap-5`}>
             <div>
                 <img
                     onClick={HandleDetails}
@@ -29,7 +33,7 @@ function Br() {
             <div className="flex flex-col gap-2">
                 <p
                     onClick={HandleDetails}
-                    className="cursor-pointer text-2xl text-center sm:text-right sm:text-3xl">{`${data.Title} (Also known as the GOAT 🐐)`}</p>
+                    className="cursor-pointer text-2xl text-center  sm:text-3xl">{`${data.Title} (Also known as the GOAT 🐐)`}</p>
                 <p className="flex items-center gap-1">
                     <span> {`Imdb rating : ${data.imdbRating}`}</span>
                     <FaStar className="text-orange-400 text-lg" />
@@ -40,7 +44,7 @@ function Br() {
                     <span>{data.Writer}</span>
                 </p>
                 <div>Plot : </div>
-                <p className="bg-stone-200 p-3 rounded-md">
+                <p className={` ${secondColor} p-3 rounded-md`}>
                     <span>{data.Plot}</span>
                 </p>
             </div>
