@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { IoCalendarOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { darkModeContext } from "../Context/darkModeContext";
 
 function MovieItem({ movie, className }) {
     const navigate = useNavigate();
+    const { mainColor, textColor } = useContext(darkModeContext);
     function ShowMovieDetails() {
         navigate(`${movie.imdbID}`);
     }
@@ -10,7 +13,7 @@ function MovieItem({ movie, className }) {
     return (
         <div
             onClick={ShowMovieDetails}
-            className={`flex items-center gap-5 my-2  bg-stone-100 py-2 px-3  rounded-md w-[97%] cursor-pointer  `}>
+            className={`flex items-center gap-5 my-2 ${textColor} ${mainColor} py-2 px-3  rounded-md w-[97%] cursor-pointer  `}>
             <div>
                 <img
                     className={`md:w-24 md:h-36 w-16 h-24 rounded-md ${className} `}
