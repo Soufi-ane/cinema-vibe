@@ -13,8 +13,11 @@ function Loader({ className }) {
             <div
                 style={{
                     border: `8px solid ${borderColor}`,
+                    width: "45px",
+                    height: "45px",
+                    borderRadius: "50%",
                 }}
-                className={`spinner`}></div>
+                className="spinner"></div>
         </div>
     );
 }

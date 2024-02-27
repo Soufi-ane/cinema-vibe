@@ -12,9 +12,6 @@ html {
 }
 
 .spinner {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
     animation: spinner-bulqg1 0.8s infinite linear alternate, spinner-oaa3wk 1.6s infinite linear;
 }
 

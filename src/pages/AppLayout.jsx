@@ -4,7 +4,7 @@ import { Outlet } from "react-router";
 
 function AppLayout() {
     return (
-        <div>
+        <div className="h-full">
             <Toaster position={"top-center"} />
             <Header />
 
