@@ -166,7 +166,7 @@ function Show() {
                         </button>
                         <button
                             onClick={HandleStremio}
-                            className="text-white lg:w-11/12 mb-1 sm:mb-0 w-12/12 md:w-12/12  font-medium py-2 px-3 rounded-md bg-[#0046F5]">
+                            className="text-white lg:w-11/12 mb-10 lg:mb-1 sm:mb-0 w-12/12 md:w-12/12  font-medium py-2 px-3 rounded-md bg-[#0046F5]">
                             Watch on Stremio
                         </button>
                     </div>{" "}
