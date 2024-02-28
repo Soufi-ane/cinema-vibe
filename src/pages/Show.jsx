@@ -41,7 +41,7 @@ function Show() {
         window.open(`https://www.imdb.com/title/${id}/`, "_self");
     }
     function HandleStremio() {
-        window.open(`https://web.stremio.com/#/detail/${data.Type}/${id}/`, "_self");
+        window.open(`https://web.stremio.com/#/detail/${data.Type}/${id}/${id}`, "_self");
     }
 
     if (data.Response === "False") return <Empty height="h-[95vh]" source="Element with this id" />;
